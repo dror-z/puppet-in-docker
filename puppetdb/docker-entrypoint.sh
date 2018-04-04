@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -d "/etc/puppetlabs/puppetdb/ssl" ]; then
-  while ! nc -z puppet 8140; do
+  while ! nc -z puppet.default.svc.cluster.local 8140; do
     sleep 1
   done
   set -e
